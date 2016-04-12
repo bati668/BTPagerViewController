@@ -16,7 +16,7 @@ BTPagerViewController higher requires Xcode 7, targeting either iOS 8.0 and abov
 ### CocoaPods
 
 ```
-pod "BTPagerViewController"
+pod 'BTPagerViewController', :git => 'https://github.com/bati668/BTPagerViewController.git'
 ```
 
 ## Usage
