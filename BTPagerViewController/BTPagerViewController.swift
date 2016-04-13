@@ -6,9 +6,6 @@
 //  Copyright © 2016年 Hiroshi Chiba. All rights reserved.
 //
 
-import Foundation
-import UIKit
-
 import UIKit
 import Foundation
 
@@ -26,8 +23,8 @@ extension Array {
     }
 }
 
-let NKJPagerViewControllerTabViewTag: Int = 1800
-let NKJPagerViewControllerContentViewTag: Int = 2400
+let BTPagerViewControllerTabViewTag: Int = 1800
+let BTPagerViewControllerContentViewTag: Int = 2400
 
 let kTabsViewBackgroundColor = UIColor(colorLiteralRed: 234.0 / 255.0, green: 234.0 / 255.0, blue: 234.0 / 255.0, alpha: 0.75)
 let kContentViewBackgroundColor = UIColor(colorLiteralRed: 248.0 / 255.0, green: 248.0 / 255.0, blue: 248.0 / 255.0, alpha: 0.75)
@@ -139,7 +136,7 @@ public class BTPagerViewController: UIViewController,UIPageViewControllerDataSou
             self.tabsView!.scrollsToTop = false
             self.tabsView!.showsHorizontalScrollIndicator = false
             self.tabsView!.showsVerticalScrollIndicator = false
-            self.tabsView!.tag = NKJPagerViewControllerTabViewTag
+            self.tabsView!.tag = BTPagerViewControllerTabViewTag
             self.tabsView!.delegate = self
             self.tabsView!.backgroundColor = UIColor.clearColor()
             self.view.insertSubview(self.tabsView!, atIndex: 0)
@@ -199,7 +196,7 @@ public class BTPagerViewController: UIViewController,UIPageViewControllerDataSou
         }
         
         // Add contentView in Superview
-        self.contentView = self.view.viewWithTag(NKJPagerViewControllerContentViewTag)
+        self.contentView = self.view.viewWithTag(BTPagerViewControllerContentViewTag)
         
         if self.contentView == nil {
             // Populate pageViewController.view in contentView
@@ -209,7 +206,7 @@ public class BTPagerViewController: UIViewController,UIPageViewControllerDataSou
             self.contentView!.backgroundColor = kContentViewBackgroundColor
             self.contentView!.backgroundColor = UIColor.clearColor()
             self.contentView!.bounds = self.view.bounds
-            self.contentView!.tag = NKJPagerViewControllerContentViewTag
+            self.contentView!.tag = BTPagerViewControllerContentViewTag
             self.view.insertSubview(self.contentView!, atIndex: 0)
             
             // constraints
@@ -367,7 +364,7 @@ public class BTPagerViewController: UIViewController,UIPageViewControllerDataSou
         if infiniteSwipe == true {
             
             // To scroll
-            if scrollView.tag == NKJPagerViewControllerTabViewTag {
+            if scrollView.tag == BTPagerViewControllerTabViewTag {
                 let buttonSize: CGFloat! = self.dataSource!.widthOfTabViewWithIndex(self.activeContentIndex!)
                 let position: CGFloat! = self.tabsView!.contentOffset.x / buttonSize
                 let delta: CGFloat! =  position - CGFloat(self.leftTabIndex!)
