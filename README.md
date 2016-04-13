@@ -8,6 +8,8 @@ It contains an endlessly scrollable UIScrollView.
 
 This viewController inspired [NKJPagerViewController](https://github.com/nakajijapan/NKJPagerViewController). The biggest of difference is written in pure swift.
 
+<img src="./BTPagerViewController.GIF" width="300" />
+
 ## Requirements
 
 BTPagerViewController higher requires Xcode 7, targeting either iOS 8.0 and above

@@ -43,6 +43,10 @@ class ViewController: BTPagerViewController,BTPagerViewControllerDataSource, BTP
         var viewControllerArray: Array<UIViewController> = []
         for _ in 0 ..< 10 {
             let controller = UIViewController()
+            let label: UILabel = UILabel(frame: CGRect(x: 20, y: 100, width: 160, height: 100))
+            label.text = "ContentView: \(index)"
+            label.textColor = UIColor.redColor()
+            controller.view.addSubview(label)
             viewControllerArray.append(controller)
         }
         return viewControllerArray[index]
